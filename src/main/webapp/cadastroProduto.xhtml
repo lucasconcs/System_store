@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"    
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Produtos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <h:body>
+        <h1>Cadastrar Produtos</h1>
+        <br />
+        <h:form>
+            <p:outputLabel style="font-family: arial;
+            font-size: 25px;" >Id</p:outputLabel>
+            <p:inputText value = "#{jsfProduto.produtoSelecionado.id}"></p:inputText>
+
+            <p:outputLabel style="font-family: arial;
+            font-size: 25px;" >nome</p:outputLabel>
+            <p:inputText value = "#{jsfProduto.produtoSelecionado.nome}"></p:inputText>
+
+            <p:outputLabel style="font-family: arial;
+            font-size: 25px;" >Quantidade</p:outputLabel>
+            <p:inputText value="#{jsfProduto.produtoSelecionado.quantidade}"></p:inputText>
+
+            <p:outputLabel style="font-family: arial;
+            font-size: 25px;"> valor</p:outputLabel>
+            <p:inputText value="#{jsfProduto.produtoSelecionado.valor}"> </p:inputText>
+
+            <p:commandButton 
+                style="
+                             border-radius: 28px;
+                             background-color: whitesmoke; 
+                             border:2px solid #000000;
+                             color: black;
+                             font-family:Arial;
+                             font-size:17px;"
+                value="Adicionar" 
+                action="#{jsfProduto.setProduto(produto)}"></p:commandButton>
+
+        </h:form>
+
+
+        <p:commandButton></p:commandButton>
+        <p:dataTable value="#{jsfProduto.all}" var="prod" style="border: 1">
+            <p:column>#{prod.id}</p:column>
+            <p:column>#{prod.nome}</p:column>
+            <p:column>#{prod.quantidade}</p:column>
+            <p:column>#{prod.valor}</p:column>
+        </p:dataTable>
+
+    </h:body>
+</html> 

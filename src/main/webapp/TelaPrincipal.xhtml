@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Tela Principal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body style="background-color: gray; 
+            text-align: center; 
+            padding-top: 50px; 
+            padding-bottom: 50px">
+        <h:outputText style="font-family: arial;
+                      font-size: 40px;
+                      color: crimson" 
+                      value="Bem-vindo ao System_Store"></h:outputText>
+        <br />
+	<br />
+	<h:form>
+            <p:commandButton 
+                             value="estoque" 
+                             action="#{jsfTelaPrincipal.redirectEstoque()}"></p:commandButton>
+            <p:commandButton 
+                             value="fornecedores" 
+                             action="#{jsfTelaPrincipal.redirectFornecedor()}"></p:commandButton>
+          
+        </h:form>
+        <br />
+            
+          <h2 style="color: crimson; font-size: 40px;">Produtos cadastrados </h2>
+	<br />
+        <p:dataTable var="produto" value="#{jsfProduto.all}"  style="background-color: black">
+                            
+                <p:column 
+                        headerText="Nome"><h:outputText value="#{produto.nome}" /></p:column>
+                
+                <p:column
+                       headerText="Descrição"><h:outputText value="#{produto.descricao}" /></p:column>
+                
+                <p:column
+                       headerText="Quantidade"><h:outputText value="#{produto.quantidade}" /></p:column>
+                
+                <p:column
+                       headerText="Valor"><h:outputText value="#{produto.valor}" /></p:column>
+                      
+        </p:dataTable>
+    </h:body>
+</html>

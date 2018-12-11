@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Estoque</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script>
+            function checkDelete() {
+                return confirm('Tem certeza que quer deletar este produto?');
+            }
+        </script>
+    </h:head>
+    <h:body style="background-color: gray; text-align: center; padding-top: 50px; padding-bottom: 50px">
+        <div>
+            <h1 style="font-size: 40px">Produtos</h1>
+            
+            <h:form>
+            <p:commandButton style="
+                             border-radius: 28px;
+                             background-color: whitesmoke; 
+                             border:2px solid #000000;
+                             color: black;
+                             font-family:Arial;
+                             font-size:17px;
+                             margin-bottom: 20px" value="Página Inicial" action="#{jsfProduto.redirectTelaPrincipal()}"></p:commandButton>
+            </h:form>
+            <h:form>
+                <p:commandButton style="
+                             border-radius: 28px;
+                             background-color: whitesmoke; 
+                             border:2px solid #000000;
+                             color: black;
+                             font-family:Arial;
+                             font-size:17px;
+                             margin-bottom: 20px" value="Cadastrar Produtos" action="#{jsfProduto.redirectAdicionar()}"
+                             ></p:commandButton>
+                
+                <p:messages id="messages" showDetail="true" closable="true">
+                    
+                </p:messages>
+
+                <p:dataTable var="produto" value="#{jsfProduto.all}" style="border: 1">
+                    <p:column headerText="ID">
+                              <h:outputText value="#{produto.id}" />
+                    </p:column>
+
+                    <p:column headerText="Produto">
+                        <h:outputText value="#{produto.nome}" />
+                    </p:column>
+
+                    <p:column headerText="Quantidade">
+                        <h:outputText value="#{produto.quantidade}" />
+                    </p:column>
+
+                    <p:column headerText="Valor">
+                        <h:outputText value="#{produto.valor}" />
+                    </p:column>
+
+                    <p:column headerText="Editar">
+                        <h:commandButton 
+                            style="
+                             border-radius: 28px;
+                             background-color: whitesmoke; 
+                             border:1px solid grey;
+                             color: black;
+                             font-family:Arial;
+                             font-size:17px;"
+                            value="X" 
+                            action="#{jsfProduto.redirectEditar(produto)}"></h:commandButton>
+                    </p:column>
+
+                    <p:column headerText="Excluir">
+                        <h:commandButton 
+                            style="
+                             border-radius: 28px;
+                             background-color: whitesmoke; 
+                             border:1px solid grey;
+                             color: black;
+                             font-family:Arial;
+                             font-size:17px;"
+                            value="X" 
+                            action="#{jsfProduto.deletarProduto(produto)}" 
+                            onclick="return checkDelete()"></h:commandButton>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </div>
+
+    </h:body>
+</html>

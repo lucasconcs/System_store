@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"    
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cadastrar Produto</title>
+    </h:head>
+    <h:body>
+        <h1>Cadastrar Produtos</h1>
+        <br />
+        <h:form 
+            style="background-color: gray; 
+            text-align: center; 
+            padding-top: 50px; 
+            padding-bottom: 50px"
+            >
+                <p:messages id="messages" showDetail="true" closable="true">
+                </p:messages>
+            
+                ID:
+                <p:inputText style="margin-left: 63px" value="#{jsfProduto.idUp}"  />
+
+                <br></br>
+                Nome:
+                <p:inputText style="margin-left: 40px; align-items: center" value="#{jsfProduto.nomeUp}" />
+                
+                <br></br>
+                Descricao:
+                <p:inputText style="margin-left: 15px" value="#{jsfProduto.descricaoUp}" />
+                
+                <br></br>
+                Quantidade: 
+                <p:inputText style="margin-left: 5px" value="#{jsfProduto.quantidadeUp}" />
+                
+                <br></br>
+                Valor: 
+                <p:inputText style="margin-left: 45px" value="#{jsfProduto.valorUp}" />
+                
+                <br></br>
+                Fornecedor: 
+                <p:selectOneMenu
+                    style="margin-left: 5px; margin-top: 10px"
+                    value="#{jsfProduto.idFornecedorUp}" required="true" requiredMessage="Selecione uma opção no menu Fornecedor    ">
+                    <f:selectItem  itemLabel="=== selecione um ==="/>
+                    <f:selectItems value="#{jsfProduto.forn}" var="forn" itemLabel="#{forn.nome}" itemValue="#{forn.id}"/>
+                </p:selectOneMenu>
+
+                <br></br>
+                <p:commandButton 
+                    style="
+                             border-radius: 28px;
+                             margin-top: 20px;
+                             background-color: whitesmoke; 
+                             border:2px solid #000000;
+                             color: black;
+                             font-family:Arial;
+                             font-size:17px;"
+
+                    value="salvar novo registro" action="#{jsfProduto.persist()}"  ajax="false"/> 
+
+            </h:form>
+
+    </h:body>
+</html>
