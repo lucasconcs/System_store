@@ -12,6 +12,6 @@ deploy:
   provider: heroku
   api_key:
     secure: r0OqW+MDJVURR5H5imRVy8+fDH1DRVLNPtRafxxoKtMzxh7W8/h4K3U0ZGWyMXkWIpizU8EfZSiXaOE8HstcnFmR9IcclN39uGc0d49sa/ondJJp3fNJaOvXpdQk9n9pSsOasr5mNnv2Q+VQuDRfnzC3bSwFW5a+fW7Zih8pzhqsB7eJgtnxGx0tQjgLfNgFEjNhpdLBsvzIhufzvEHgbn+MDQOd/MX1+qa0du+i2Ea5lyWxWV0YmG6X8aeIMBcWn1HNHUdymMmn8+Ul1rfbvgEVJ9qy/X7yvU2IzGi+gPZZtImvJdcXye8RgCbyutBargJBtNIgHR8/6gbTh7oSdnLJHru2haPxwm7bZF36/og4OT28gAnxmk6ymJGdUzyov2+KuFVuO3XOt+glCO1BdJQi7FMSLSwkh8tlqYOTE3PZuTJb6r7kXss6Gi1Jy/MkTybHMfHCiwQzdEmEMQhapGPvKLiKrTOLDuAwUEAf8FVvybi4m33Agka2nLQLKvQrZoeHVxa/PcOGJgYWsKx75xuxadMfXLMEE6UZhz/hzxtdl0R4zbsMUuJor+C0568W9KMm/2uMRvtnwhAECaW7k8ODuxOs78SdeZbqsV/1kCn0ARAthNYoiUeV1wKxUWsjUP3g11cjxk4/AAlyWx7wNjTPvcr5iLKMLMA0o4uR+R4=
-  app: y
+  app: System_store
   on:
     repo: lucasconcs/System_store
